@@ -1,17 +1,58 @@
-//MODULE ASSIGNMENT 2 - LEVEL 1
+//MODULE ASSIGNMENT 2 - LEVEL 2
 
 1. What is a function literal?
 
+In Javascript a function literal is built up from 4 parts. The reserved word 'function', the functions name (optional), a set of parameters and a set of statements.
+Basically a function literal is a variable with a function contained inside of it, instead of a boolean, string etc.
+
+
 2. What is the constructor?
+
+The constructor is a method is use to create and intialize objects created within a class.
+
 
 3. What does the return statement do?
 
+The return statement is used to return a value from within a function so it can be used on the outside of that scope.
+An example would be:
+
+function testFunc() {
+    var testVar = 1984;
+    return testVar;
+}
+console.log('I was born in ' + testFunc());
+
+
 4. What will be written to the console from this function:
+
 		function myFunction(){
 			  return console.log('inside my function');
 			  console.log('My name is Andy');
 		}
 		myFunction();
 
+The console log will display "inside my function", the reason for this is that the return statement will always exit and stop further execution within the function it is used in.
+
 
 5. Briefly describe scope in JavaScript.
+
+A scope dictates where a variable value can be accessed. For javascript these are split in to two different types, local and global.
+
+A global variable is a variable declared outside of any function, often at the top of a script before any functions are even ran. Something inside the Global Scope can be accessed and used by all scripts and functions.
+
+A local variable is a variable declared inside a function. This can only be accessed inside that function, or in functions declared inside the same function, basically a downwards hierachi.
+Functions made outside the function where the variable was declared in will not be able to access it.
+
+Example:
+
+var favColor = 'blue';
+
+function someFunc1() {
+    var favFood = 'taco';
+    console.log('My favorite color is ' + favColor); // the console.log can access the "favColor" variable, since it was declared outside of the function and is considered global.
+}
+
+function someFunc2() {
+    console.log('My favorite food is ' + favFood); // this will return undefined, as the "favFood" variable was declared inside a different function, and is then considered local, and can only be accessed within the previous function.
+}
+

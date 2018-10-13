@@ -51,18 +51,18 @@ function question5() {
     var footballTeams = ['Barcelona', 'Real Madrid', 'Arsenal', 'Manchester United'];
     var carNames = ['Aston Martin DB9', 'Tesla Model X', 'Ferrari 458', 'Porche 911'];
     var buttonPushed = false;
-    var questionNrDisplayed = false; //Dont display "Question 5" console log on second push
+    var questionNrDisplayed = false;
 
     button1.addEventListener(
         'click',
         function () {
 
-            if (!questionNrDisplayed) {
+            if (!questionNrDisplayed) { // has "Questions 5" console log been displayed?
                 console.log('Question 5');
                 questionNrDisplayed = true;
             }
 
-            if (!buttonPushed) {
+            if (!buttonPushed) { // has button been pushed before?
                 console.log('Array contained: ' + footballTeams);
                 footballTeams = [];
                 console.log('Button was clicked, so array is cleared. Click again to replace with car names');
